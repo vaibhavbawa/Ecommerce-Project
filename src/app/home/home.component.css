@@ -1,0 +1,23 @@
+.main-home{
+    /* flex-grow: 1; */
+    background-color: aquamarine;
+    /* z-index: 10; */
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.main-home h1{
+    text-align: center;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.main-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto
+
+}
