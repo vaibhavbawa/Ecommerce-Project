@@ -11,25 +11,25 @@
     /* width: 700px; */
     height: 100vh;
     width: 90vw;
-    /* background-image: url('login.jpg.jpeg');
+    background-image: url('login.jpg.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-size: 100% 100%; */
+    background-size: 100% 100%;
     /* background-size: ; */
     /* background-color: red; */
     /* border: 2px solid black; */
     
 }
 
-.img-part img{
+/* .img-part img{ */
     /* mix-blend-mode: color-burn; */
     /* height: 630px;
     width: 700px;  */
-}
+/* } */
 
 .main-login{
     
-    /* background-color:blue; */
+    background-color:blue;
     /* background-color: rgba(239, 248, 248, 0.856); */
     /* height: 100%;
     width: 100%; */
@@ -38,12 +38,12 @@
 }
 
 mat-card {
-    
+    display: flex;
     background-color: white;
     justify-content: center;
     align-items: center;
-    height:410px;
-    width: 290px;
+    height:430px;
+    width: 330px;
     /* margin: auto; */
     /* border: 2px solid rgba(90, 89, 89, 0.295); */
     border-radius: 10px;
@@ -52,16 +52,23 @@ mat-card {
     /* padding: 100px; */
 }
 form{
+    /* display: flex;
+    flex-direction: column; */
     justify-content: center;
     align-items: center;
+    height: 350px;
+    width: 250px;
+    /* background-color: cyan; */
+    position: relative;
+    
 }
 mat-card h1{
 margin-top: 30px;
     color:#7E30E1;
 }
-mat-card input{
-    padding: 5px;
-    margin: 10px 0px 30px 0px;
+mat-card form input{
+    /* padding: 5px; */
+    margin: 30px 0px 30px 30px;
     outline: none;
     border: 0;
     background-color: transparent;
@@ -72,6 +79,8 @@ mat-card input{
 
 ::placeholder{
     color: black;
+    font-size: smaller;
+    padding-left: 5px;
 }
 
 form button{
@@ -79,7 +88,7 @@ form button{
     outline: none;
     width: 90px;
     height: 25px;
-    margin: 30px 40px;
+    margin: 30px 70px;
     color: white;
 
 }
@@ -93,49 +102,84 @@ mat-card button:hover{
     background-color: skyblue;
 } */
 
-mat-form-field small a{
+/* mat-form-field {
+    padding: 0;
+    margin: 0;
+    background-color: red;
+} */
+
+small a{
     text-decoration: none;
+    position: absolute;
+    top: 145px;
+    right: 0px;
+    font-size: smaller;
 
 }
 
-mat-form-field #icon1{
+/* mat-form-field #icon1{
     position: absolute;
     right: 5px;
     top: 39px;
     font-size: large;
-}
+} */
 
-mat-form-field #icon2{
+/* mat-form-field #icon2{
     position: absolute;
     right: 3px;
     bottom: 155px;
     font-size: large;
-}
+} */
 
  /* mat-icon {
     color: #007bff; 
     font-size: 24px; 
   }  */
 
-  mat-form-field small{
+.small{
     font-size: 12px;
     position: absolute;
     right: 0;
-    top: 135px;
+    top: 145px;
   }
 
-/* mat-form-field h5{
+form h5{
     text-align: center;
-} */
-
-mat-form-field p{
-    font-size: 14px;
-    text-align: center;
-    position: absolute;
-    bottom: 10px;
 }
 
-mat-form-field p a{
+form p{
+    font-size: 14px;
+    text-align: center;
+    /* position: absolute;
+    bottom: 4px; */
+    text-align: center;
+}
+
+form  p a{
     text-decoration: none;
     color: black;
+}
+
+form div{
+   
+    position: relative;
+}
+
+form div small{
+    position: absolute;
+    top:-30px;
+}
+
+form div .small2{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    color: red;
+}
+
+div .small{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    color: red;
 }
