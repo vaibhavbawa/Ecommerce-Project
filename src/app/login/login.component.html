@@ -1,122 +1,52 @@
 
-<div class="login-page">
-  <!-- <app-header></app-header> -->
-  <div class="img-part">
-    <!-- <img src="login.jpg.jpeg" alt="" srcset=""> -->
-    
-  </div>
-  <div class="main-login" >
-    <mat-card>
-        <h1>Login</h1>
-        <form (ngSumbit)="loginForm.status !== 'INVALID' && 'onSubmit()'" [formGroup]="loginForm">
-        <!-- <mat-form-field> -->
-            <input  id="email"  placeholder="email" type="email" name="email" formControlName="email" [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
-            <!-- <span><i class="fa fa-user"></i></span> -->
-            <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
-              <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
-              <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
-            </div>
-            <!-- <mat-icon id="icon1" aria-hidden="false" aria-label="Example home icon" fontIcon="">email</mat-icon> -->
-          <!-- </mat-form-field> -->
-          <!-- <mat-form-field> -->
-            <input  id="password" placeholder="Password" type="password" name="password" formControlName="password" [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}">
-            <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
-              <small class="small2" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
-              <small class="small2"
-                *ngIf="getControl('password')?.errors?.['minlength']  || getControl('password')?.errors?.['pattern']">Length 8(U/L/S)</small>
-                <!-- <div *ngIf="loginForm.get('password').hasError('strongPassword')" class="small2">
-                  Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.
-                </div> -->
-            </div><br>
-           
-            <!-- <mat-icon id="icon2" aria-hidden="false" aria-label="Example home icon" fontIcon="" >visibility_off</mat-icon> -->
-            <small><a href="#">forget password?</a></small>
-            <button mat-stroked-button type="submit" [disabled]="loginForm.status === 'INVALID'">Login</button>
-            <p>Don't have account? <a href="singup">SingUp</a></p>
-          <!-- </mat-form-field> -->
-        </form>
-      </mat-card>
+<div class="main">
+  <div class="header">
+    <div class="head">
+      <img src="https://api.iconify.design/mdi:yelp.svg?color=black" alt="" height="50" width="50">
     </div>
+    <div class="head2">
+      <h2> V - Mart</h2>
+    </div>
+  </div>
+  <div class="contain">
+    <div class="left">
+      <div class="form-field">
+        <h1>Welcome back</h1>
+        <div class="google-sing">
+          <img src="assets/google.png.png" alt="">
+          <a href="">Sign in with google</a>
+        </div>
+        <div class="underline">
+          <p id="or">or</p>
+        </div>
+        <form (ngSumbit)="loginForm.status !== 'INVALID' && 'onSubmit()'" [formGroup]="loginForm">
+    
+          <label for="">Email address / Contact number</label><br>
+          <input type="text" name="email" id="email" name="email" formControlName="email" [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
+          <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+            <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
+            <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
+          </div><br>
+          <div class="password-container">
+            <label for="">Password</label><br>
+            <input type="password" name="password" id="password" name="password" formControlName="password" [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}">
+            <i class="icon " onclick="togglePasswordVisibility()">🔒</i>
+          </div>
+          <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+            <small class="small2" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
+            <small class="small2"
+              *ngIf="getControl('password')?.errors?.['minlength']  || getControl('password')?.errors?.['pattern']">Length 8(U/L/S)</small>
+              <!-- <div *ngIf="loginForm.get('password').hasError('strongPassword')" class="small2">
+                Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.
+              </div> -->
+          </div>
+          <input id="btn" value="Log in" type="submit" [disabled]="loginForm.status === 'INVALID'"><br>
+          <p id="forgot-pass"><a href="">Forgot your password?</a></p>
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <img src="assets/image 1.png" alt="">
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="main-login" >
-<mat-card>
-    <h1>Login</h1>
-    <form action="">
-    <mat-form-field>
-        <input matInput placeholder="email" type="email">
-        <input matInput placeholder="Password" type="password">
-        <button mat-stroked-button>Login</button>
-      </mat-form-field>
-    </form>
-  </mat-card>
-</div> -->

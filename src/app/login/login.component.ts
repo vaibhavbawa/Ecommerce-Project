@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+declare function togglePasswordVisibility(): any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,6 +26,10 @@ export class LoginComponent {
     // });
   }
 
+  ngOnInit(){
+    togglePasswordVisibility();
+  }
+
   getControl(name:any) : AbstractControl | null {
     return this.loginForm.get(name)
   }
@@ -34,4 +41,5 @@ export class LoginComponent {
 function strongPasswordValidator(): any | string {
   throw new Error('Function not implemented.');
 }
+
 

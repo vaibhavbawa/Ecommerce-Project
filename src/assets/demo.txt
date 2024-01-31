@@ -1,0 +1,440 @@
+login.html
+
+
+<div class="login-page">
+  <!-- <app-header></app-header> -->
+  <div class="img-part">
+    <!-- <img src="login.jpg.jpeg" alt="" srcset=""> -->
+    
+  </div>
+  <div class="main-login" >
+    <mat-card>
+        <h1>Login</h1>
+        <form (ngSumbit)="loginForm.status !== 'INVALID' && 'onSubmit()'" [formGroup]="loginForm">
+        <!-- <mat-form-field> -->
+            <input  id="email"  placeholder="email" type="email" name="email" formControlName="email" [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
+            <!-- <span><i class="fa fa-user"></i></span> -->
+            <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+              <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
+              <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
+            </div>
+            <!-- <mat-icon id="icon1" aria-hidden="false" aria-label="Example home icon" fontIcon="">email</mat-icon> -->
+          <!-- </mat-form-field> -->
+          <!-- <mat-form-field> -->
+            <input  id="password" placeholder="Password" type="password" name="password" formControlName="password" [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}">
+            <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+              <small class="small2" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
+              <small class="small2"
+                *ngIf="getControl('password')?.errors?.['minlength']  || getControl('password')?.errors?.['pattern']">Length 8(U/L/S)</small>
+                <!-- <div *ngIf="loginForm.get('password').hasError('strongPassword')" class="small2">
+                  Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.
+                </div> -->
+            </div><br>
+           
+            <!-- <mat-icon id="icon2" aria-hidden="false" aria-label="Example home icon" fontIcon="" >visibility_off</mat-icon> -->
+            <small><a href="#">forget password?</a></small>
+            <button mat-stroked-button type="submit" [disabled]="loginForm.status === 'INVALID'">Login</button>
+            <p>Don't have account? <a href="singup">SingUp</a></p>
+          <!-- </mat-form-field> -->
+        </form>
+      </mat-card>
+    </div>
+</div>
+==============================================================================================
+
+<!-- <div class="main-login" >
+<mat-card>
+    <h1>Login</h1>
+    <form action="">
+    <mat-form-field>
+        <input matInput placeholder="email" type="email">
+        <input matInput placeholder="Password" type="password">
+        <button mat-stroked-button>Login</button>
+      </mat-form-field>
+    </form>
+  </mat-card>
+</div> -->
+
+
+====================================================================================
+
+login.css 
+
+.login-page{
+    display: flex;
+    overflow: hidden;
+    background-color: #F3F8FF;
+    /* height: 100%;
+    width: 100%; */
+}
+
+.img-part{
+    /* height: 635px; */
+    /* width: 700px; */
+    height: 100vh;
+    width: 90vw;
+    background-image: url('login.jpg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+    /* background-size: ; */
+    /* background-color: red; */
+    /* border: 2px solid black; */
+    
+}
+
+/* .img-part img{ */
+    /* mix-blend-mode: color-burn; */
+    /* height: 630px;
+    width: 700px;  */
+/* } */
+
+.main-login{
+    
+    background-color:blue;
+    /* background-color: rgba(239, 248, 248, 0.856); */
+    /* height: 100%;
+    width: 100%; */
+    padding: 90px; 
+    /* overflow: hidden; */
+}
+
+mat-card {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height:430px;
+    width: 330px;
+    /* margin: auto; */
+    /* border: 2px solid rgba(90, 89, 89, 0.295); */
+    border-radius: 10px;
+    /* background-color: #F3F8FF; */
+    /* box-shadow: 10px 10px 10px 0px  gray; */
+    /* padding: 100px; */
+}
+form{
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 250px;
+    /* background-color: cyan; */
+    position: relative;
+    
+}
+mat-card h1{
+margin-top: 30px;
+    color:#7E30E1;
+}
+mat-card form input{
+    /* padding: 5px; */
+    margin: 30px 0px 30px 30px;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    border: 1px solid black;
+    position: relative;
+}
+
+
+::placeholder{
+    color: black;
+    font-size: smaller;
+    padding-left: 5px;
+}
+
+form button{
+  background-color:#E26EE5;
+    outline: none;
+    width: 90px;
+    height: 25px;
+    margin: 30px 70px;
+    color: white;
+
+}
+
+/* mat-card:hover{
+    background-color:bl;
+}
+
+mat-card button:hover{
+    border: 1px solid red;
+    background-color: skyblue;
+} */
+
+/* mat-form-field {
+    padding: 0;
+    margin: 0;
+    background-color: red;
+} */
+
+small a{
+    text-decoration: none;
+    position: absolute;
+    top: 145px;
+    right: 0px;
+    font-size: smaller;
+
+}
+
+/* mat-form-field #icon1{
+    position: absolute;
+    right: 5px;
+    top: 39px;
+    font-size: large;
+} */
+
+/* mat-form-field #icon2{
+    position: absolute;
+    right: 3px;
+    bottom: 155px;
+    font-size: large;
+} */
+
+ /* mat-icon {
+    color: #007bff; 
+    font-size: 24px; 
+  }  */
+
+.small{
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 145px;
+  }
+
+form h5{
+    text-align: center;
+}
+
+form p{
+    font-size: 14px;
+    text-align: center;
+    /* position: absolute;
+    bottom: 4px; */
+    text-align: center;
+}
+
+form  p a{
+    text-decoration: none;
+    color: black;
+}
+
+form div{
+   
+    position: relative;
+}
+
+form div small{
+    position: absolute;
+    top:-30px;
+}
+
+form div .small2{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    color: red;
+}
+
+div .small{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    color: red;
+}
+
+
+===============================================================================================================
+
+singup.component.html
+
+<div class="main-singup">
+  <mat-card>
+    <h1>Registration</h1>
+    <form  (ngSumbit)="registerForm.status !== 'INVALID' && 'onSubmit()'" [formGroup]="registerForm">
+      <!-- <mat-form-field > -->
+      <!-- <input  type="text" placeholder="Username" id="username" formControlName="username" [ngClass]="{error : getControl('username')?.errors && getControl('username')?.touched}"> -->
+      <input type="text" placeholder="Username" id="username" formControlName="username"
+        [ngClass]="{'error': getControl('username')?.errors && getControl('username')?.touched}">
+      <div *ngIf="getControl('username')?.errors && getControl('username')?.touched">
+        <small class="small" *ngIf="getControl('username')?.errors?.['required']">UserName is Required</small>
+        <small class="small"
+          *ngIf="getControl('username')?.errors?.['minlength'] || getControl('username')?.errors?.['pattern']">Enter a
+          valid name</small>
+      </div>
+      <!-- </mat-form-field> -->
+      <input placeholder="Email" type="email" id="email" formControlName="email"
+        [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
+      <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+        <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
+        <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
+      </div>
+      <input type="mobile" placeholder="Mobile No" id="mobile" formControlName="mobile"
+        [ngClass]="{'error': getControl('mobile')?.errors && getControl('mobile')?.touched}">
+      <div *ngIf="getControl('mobile')?.errors && getControl('mobile')?.touched">
+        <small class="small" *ngIf="getControl('mobile')?.errors?.['required']">Mobile no is Required</small>
+        <!-- <small class="small" *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">Please Enter a Valid mobile number</small> -->
+        <small class="small"
+          *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">
+          Enter Valid mobile number</small>
+      </div>
+      <div class="i_input">
+      <input placeholder="Password" type="password" id="password" formControlName="password"
+        [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}">
+        <!-- <mat-icon matPrefix class="username-icon" id="eyeicon" class="eyeicon">visibility_on</mat-icon> -->
+        <!-- <img src="https://api.iconify.design/fa6-regular:eye.svg" alt="" id="icone1"> -->
+        </div>
+      <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+        <small class="small" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
+        <small class="small"
+          *ngIf="getControl('password')?.errors?.['minlength']  || getControl('password')?.errors?.['pattern']">Minimum
+          8 charecter</small>
+      </div>
+  
+      <input placeholder="Confirm Password" type="password" id="confirm_password" formControlName="confirm_password"
+        [ngClass]="{'error' : getControl('confirm_password')?.errors && getControl('confirm_password')?.touched}">
+      <div *ngIf="getControl('confirm_password')?.errors && getControl('confirm_password')?.touched">
+        <small class="small" *ngIf="getControl('confirm_password')?.errors?.['required']">Confirm Password is
+          Required</small>
+        <!-- <small class="small"
+          *ngIf="getControl('confirm_password')?.errors?.['maxlength'] || getControl('confirm_password')?.errors?.['minlength'] || getControl('password')?.errors?.['pattern']">Minimum
+          8 charecter</small> -->
+      </div>
+      <div *ngIf="registerForm.errors?.['passwordMismatch'] &&  getControl('confirm_password')?.touched">
+        <small id="small2">Password Mismatch</small>
+      </div>
+
+      <button type="submit" [disabled]="registerForm.status === 'INVALID'">Login</button>
+      <!-- </mat-form-field> -->
+      <!-- <button class="btn btn-primary">click me</button> -->
+    </form>
+  </mat-card>
+</div> 
+
+===============================================================================================================
+
+
+singup.component.css
+
+
+.main-singup{
+    background-image: url('img2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:100%;
+    width: 100%;
+    /* padding-top: 100px; */
+}
+
+mat-card {    
+    background-color: blueviolet;
+    justify-content: center;
+    align-items: center;
+    height:550px;
+    width: 450px;
+    margin:  auto;
+    margin-bottom: 100px;
+    border: 2px solid white;
+    /* border: 1px solid red; */
+    padding: 200px;
+    /* background-color: transparent; */
+    /* background-image: ; */ 
+}
+
+form{
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    /* background-color: aqua; */
+    /* height: auto; */
+    padding: 5px;
+}
+
+::placeholder{
+    color: white;
+    /* border: 1px solid red; */
+}
+mat-card h1{
+    color:white;
+    /* margin-top: 40px; */
+    /* border: 1px solid red; */
+}
+mat-card input{
+    /* border: 1px solid red; */
+    padding: 5px;
+    margin: 0px 0px 30px 0px;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    /* position: relative; */
+    
+}
+
+mat-card input[type=number]::-webkit-inner-spin-button,
+mat-card input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+form button{
+    color: black;
+    /* background-color: white; */
+    width: 80px;
+    height: 25px;
+    margin: 10px 40px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    /* border: 1px solid red; */
+}
+
+.error{
+    /* border: 1px solid red; */
+    background-color: red;
+}
+
+.small{
+    color: red;
+}
+
+
+
+form div{
+   
+    position: relative;
+}
+
+form div small{
+    position: absolute;
+    top:-30px;
+}
+#small2{
+    color: red;
+    position: absolute;
+    top:-15px;
+}
+
+.i_input{
+    /* color: black; */
+    /* background: white; */
+    display: flex;
+    /* width: 90%; */
+    /* max-width: 500px; */
+    border-radius: 5px;
+    /* padding: 10px 10px; */
+    /* margin: 300px auto; */
+    /* align-items: center; */
+}
+
+mat-icon{
+    cursor: pointer;
+    color: white
+}
