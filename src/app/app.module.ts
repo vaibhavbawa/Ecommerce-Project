@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+
+// import { myLoginComponent } from '.myLogin.component';
 import { SingupComponent } from './singup/singup.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 // import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
@@ -25,7 +28,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     SingupComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    // myLoginComponent
+ 
    
   ],
   imports: [

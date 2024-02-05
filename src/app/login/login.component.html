@@ -1,52 +1,65 @@
-
 <div class="main">
-  <div class="header">
+  <!-- <div class="header">
     <div class="head">
       <img src="https://api.iconify.design/mdi:yelp.svg?color=black" alt="" height="50" width="50">
     </div>
     <div class="head2">
       <h2> V - Mart</h2>
     </div>
-  </div>
+  </div> -->
   <div class="contain">
     <div class="left">
       <div class="form-field">
         <h1>Welcome back</h1>
         <div class="google-sing">
-          <img src="assets/google.png.png" alt="">
+          <img src="assets/login-material/google.png.png" alt="">
           <a href="">Sign in with google</a>
         </div>
         <div class="underline">
           <p id="or">or</p>
         </div>
         <form (ngSumbit)="loginForm.status !== 'INVALID' && 'onSubmit()'" [formGroup]="loginForm">
-    
+
+
+          <!-- <label for="emailOrMobile">Email or Mobile:</label>
+          <input id="emailOrMobile" name="emailOrMobile" formControlName="emailOrMobile">
+
+          <div *ngIf="loginForm.get('emailOrMobile').hasError('emailOrMobile')">
+            Please enter a valid email address or mobile number.
+          </div> -->
+
           <label for="">Email address / Contact number</label><br>
-          <input type="text" name="email" id="email" name="email" formControlName="email" [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
+          <input type="text"  id="email" name="email" formControlName="email" [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
           <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
             <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
             <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
           </div><br>
+          <!-- <label for="">Email address / Contact number</label><br>
+          <input type="text"  id="emailOrMobile" name="emailOrMobile" formControlName="emailOrMobile" [ngClass]="{'error' : getControl('emailOrMobile')?.errors && getControl('emailOrMobile')?.touched}">
+          <div *ngIf="getControl('emailOrMobile')?.errors && getControl('emailOrMobile')?.touched">
+            <small class="small" *ngIf="getControl('emailOrMobile')?.errors?.['required']">Email is Required</small>
+            <small class="small" *ngIf="getControl('emailOrMobile')?.errors?.['pattern']">Enter Valide Email</small>
+          </div><br> -->
           <div class="password-container">
             <label for="">Password</label><br>
-            <input type="password" name="password" id="password" name="password" formControlName="password" [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}">
-            <i class="icon " onclick="togglePasswordVisibility()">🔒</i>
+            <input type="password" name="password" id="password" name="password" formControlName="password"
+              [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}">
+            <i class="fa fa-eye-slash " id="icon" onclick="togglePasswordVisibility()"></i>
+            <!-- <i   class="fa fa-eye  icon1"  onclick="togglePasswordVisibility()"></i> -->
           </div>
           <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
             <small class="small2" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
             <small class="small2"
-              *ngIf="getControl('password')?.errors?.['minlength']  || getControl('password')?.errors?.['pattern']">Length 8(U/L/S)</small>
-              <!-- <div *ngIf="loginForm.get('password').hasError('strongPassword')" class="small2">
-                Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.
-              </div> -->
+              *ngIf="getControl('password')?.errors?.['minlength']  || getControl('password')?.errors?.['maxlength'] || getControl('password')?.errors?.['pattern']">length 8 must lowar upper and symbol</small>
           </div>
           <input id="btn" value="Log in" type="submit" [disabled]="loginForm.status === 'INVALID'"><br>
-          <p id="forgot-pass"><a href="">Forgot your password?</a></p>
+          <p id="forgot-pass"><a href="#">Forgot your password?</a></p>
+          <p class="singup-now">New For V - Mart /<a href="#"> Sing-Up Now</a></p>
         </form>
       </div>
     </div>
     <div class="right">
-      <img src="assets/image 1.png" alt="">
+      <img src="assets/login-material/image 1.png" alt="">
     </div>
   </div>
 </div>

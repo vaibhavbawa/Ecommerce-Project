@@ -135,6 +135,14 @@
     margin-left: 50px;
 }
 
+.singup-now{
+    margin-left: 20px;
+}
+
+.singup-now a{
+    color: #05F;
+}
+
 .form-field form {
     padding: 10px;
     font-size: 13px;
@@ -190,7 +198,9 @@ input[type="password"]::-webkit-password-slash {
     color: red;
 }
 
-.icon {
+
+
+#icon{
     position: absolute;
     top: 70%;
     right: 15px;
@@ -198,6 +208,14 @@ input[type="password"]::-webkit-password-slash {
     cursor: pointer;
 
 }
+
+/* .icon1{
+    position: absolute;
+    top: 70%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+} */
 
 .form-field #btn {
     margin-top: 30px;

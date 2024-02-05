@@ -438,3 +438,186 @@ mat-icon{
     cursor: pointer;
     color: white
 }
+
+
+=================================================================================================================
+
+home.component.html
+
+<!-- <p>home works!</p> -->
+<!-- <app-header></app-header> -->
+<div class="main-home">
+    <div class="navbar">
+        <nav>
+            <img src="assets/home-material/home-logo.png" alt="" id="logo">
+            <input type="text">
+            <select name="" id="" >
+                <option value="">offers</option>
+                <option value="">home</option>
+                <option value="">about</option>
+                <option value="">contact</option>
+            </select>
+            <select name="" id="" >
+                <option value="">Expore</option>
+                <option value="">home</option>
+                <option value="">about</option>
+                <option value="">contact</option>
+            </select>
+            <ul>
+                <li><a href="">sing in</a></li>
+                <li><a href="">Join us</a></li>
+            </ul>
+            <img src="assets/home-material/man-logo.png" alt="" id="man-logo">
+        </nav>
+    </div>
+
+</div>
+<!-- <app-footer></app-footer> -->
+
+
+============================================================================================================
+
+
+home.component.css
+
+
+
+/* .main-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto
+
+} */
+
+
+.main-home{
+    display: flex;
+    display: grid;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center;   */
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+.navbar{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+    background-color: aqua;
+}
+
+.navbar nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 100px;
+    width: 100vw;
+    /* margin: 0px 100px; */
+    background-color: wheat;
+}
+
+.navbar nav #logo{
+    /* max-width: 100px; */
+    padding-right: 15px;
+    width: 186px;
+    height: 36px;
+}
+.navbar nav input{
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.navbar nav select{
+    margin-right: 10px;
+    border: none;
+}
+
+.navbar nav ul{
+    display: flex;
+    margin-top: 20px;
+    /* margin-left: auto; */
+}
+
+.navbar nav ul li{
+    list-style: none;
+    /* margin-right: 10px; */
+}
+
+.navbar nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding-left: 20px;
+}
+
+.navbar nav #man-logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        /* padding: 100px; */
+        margin-left: 200px;
+      }
+
+
+
+
+
+
+========================================================================================================
+
+login.ts 
+
+
+
+import { Component } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+declare function togglePasswordVisibility(): any;
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
+})
+export class LoginComponent {
+
+  // emailRegex = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}';
+  // passwordRegex = /[A-Za-z0-9!@#$%^&*()_+]/;
+  passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&+/*-<>~])[A-Za-z\d@$!%*?#&+/*-<>~]{8,}$/;
+  
+  loginForm: FormGroup;
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      // password: ['', [Validators.required]],
+      // loginForm = new FormGroup({
+        // email: new FormControl('', [Validators.required, Validators.maxLength(32), Validators.pattern(this.emailRegex)]),
+        password: new FormControl('', [Validators.required, Validators.maxLength(1), Validators.minLength(1), Validators.pattern(this.passwordRegex)]),
+      })
+
+      
+    
+    // });
+  }
+
+  ngOnInit(){
+    togglePasswordVisibility();
+  }
+
+  getControl(name:any) : AbstractControl | null {
+    return this.loginForm.get(name)
+  }
+
+  onSubmit(){
+    console.log(this.loginForm.value);
+  }
+}
+// function strongPasswordValidator(): any | string {
+//   throw new Error('Function not implemented.');
+// }
+
+
