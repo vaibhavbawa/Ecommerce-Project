@@ -1,0 +1,37 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    width: 100vw;
+
+}
+
+.main{
+    width: 100vw;
+    background: rebeccapurple;
+}
+
+.main .p1{
+    height: 100vh;
+    width: 100vw;
+    background: gray;
+    display: flex;
+}
+
+/* .main .p2{
+    height: 100%;
+    width: 100%;
+    background: rgb(189, 14, 14);
+} */
+
+.p1 .sideN{
+    width: 20vw;
+    background: wheat;
+}
+
+.p1 .nav{
+    width: 80%;
+    background: rgb(23, 95, 143);
+}

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
 
 
+
 .main {
     overflow: hidden;
     font-family: 'Poppins';
@@ -175,6 +176,8 @@ input[type="password"]::-ms-clear {
 
 .password-container {
     position: relative;
+    /* background-color: wheat; */
+    
 }
 
 /* For other browsers */
@@ -198,7 +201,10 @@ input[type="password"]::-webkit-password-slash {
     color: red;
 }
 
-
+/* #btn:hover:disabled {
+    cursor: not-allowed;
+    Add any other styles for disabled button on hover
+  } */
 
 #icon{
     position: absolute;
@@ -230,6 +236,14 @@ input[type="password"]::-webkit-password-slash {
     background-color: #05F;
     color: white;
     padding-left: 75px;
+    cursor: pointer;
+
+    
+    &[disabled]{
+        background-color:dodgerblue;
+        color: #fff;
+    }
+
 }
 
 

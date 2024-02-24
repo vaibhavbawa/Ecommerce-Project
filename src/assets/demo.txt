@@ -1,3 +1,51 @@
+T-shirts
+Pants
+Dresses
+Jackets
+Hoodies
+Sweaters
+Shorts
+Skirts
+Blouses
+Jeans
+Blazers
+Coats
+Vests
+Suits
+Rompers
+Jumpsuits
+Cardigans
+Tank tops
+Tunics
+Leggings
+Sweatpants
+Swimwear
+Lingerie
+Sleepwear
+Activewear
+Kimonos
+Ponchos
+Bodysuits
+Maxi dresses
+Midi dresses
+Mini dresses
+Palazzo pants
+Cargo pants
+Capri pants
+Culottes
+Peplum tops
+Polo shirts
+Crop tops
+Button-down shirts
+Flannel shirts
+Halter tops
+Off-the-shoulder tops
+Puffer jackets
+Parkas
+Windbreakers
+
+
+
 login.html
 
 
@@ -621,3 +669,1273 @@ export class LoginComponent {
 // }
 
 
+
+==================================================================================================================
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+// declare function validateInput() : any;
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
+})
+export class LoginComponent implements OnInit {
+
+  emailRegex = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}';
+  // passwordRegex = /[A-Za-z0-9!@#$%^&*()_+]/;
+  // passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&+/*-<>~])[A-Za-z\d@$!%*?#&+/*-<>~]{8,}$/;
+  passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/;
+  loginForm: FormGroup;
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+        email: new FormControl('', [Validators.required, Validators.maxLength(32), Validators.pattern(this.emailRegex)]),
+        password: new FormControl('', [Validators.required,Validators.maxLength(8), Validators.minLength(8), Validators.pattern(this.passwordRegex)]),
+      })
+  }
+
+
+
+  getControl(name:any) : AbstractControl | null {
+    return this.loginForm.get(name)
+  }
+
+  onSubmit(){
+    console.log(this.loginForm.value);
+  }
+
+  ngOnInit(): void{
+    // validateInput();
+  }
+
+}
+
+
+
+function ngOnInit() {
+  throw new Error('Function not implemented.');
+}
+
+
+
+=============================================================================================================================================
+
+
+
+home.component.html :- 
+
+<div class="main-home">
+    <div class="home">
+    <div class="sidebar">
+        <div class="side-field-1">
+            <a href=""><img src="https://api.iconify.design/ep:expand.svg" alt=""></a>
+            <a href="">Best Deals</a>
+        </div>
+        <div class="side-field-1">
+            <a href=""><img src="assets/home-material/icon2.png" alt=""></a>
+            <a href="">Others</a>
+        </div>
+        <div class="side-field-1">
+            <a href=""><img src="assets/home-material/icon3.png" alt=""></a>
+            <a href="">Kitchen</a>
+        </div>
+        <div class="side-field-1">
+            <a href=""><img src="assets/home-material/icon4.png" alt=""></a>
+            <a href="">Home Appliances</a>
+        </div>
+        <div class="side-field-1">
+            <a href=""><img src="assets/home-material/icon5.png" alt=""></a>
+            <a href="">Home & Kitchen</a>
+        </div>
+        <div class="side-field-1">
+            <a href=""><img src="assets/home-material/icon6.png" alt=""></a>
+            <a href="">Baby & Kids</a>
+        </div>
+        <div class="side-field-1">
+            <a href=""><img src="assets/home-material/icon7.png" alt=""></a>
+            <a href="">Watches</a>
+        </div>
+    </div>
+    <div class="navbar-main">
+    <div class="navbar">
+        <nav>
+            <img src="assets/home-material/home-logo.png" alt="" id="logo">
+            <input type="text" placeholder="Search Store">
+            <select name="" id="" >
+                <option value="">offers</option>
+                <option value="">home</option>
+                <option value="">about</option>
+                <option value="">contact</option>
+            </select>
+            <select name="" id="" >
+                <option value="">Expore</option>
+                <option value="">home</option>
+                <option value="">about</option>
+                <option value="">contact</option>
+            </select>
+            <ul>
+                <li><a href="singup">Sing In</a></li>
+                <li><a href="#">Join Us</a></li>
+            </ul>
+            <img src="assets/home-material/man-logo.png" alt="" id="man-logo">
+        </nav>
+    </div>
+        <div class="main-content">
+        <div class="content">
+            <p>Handpicked Coupon Categories</p>
+            <ul>
+                <li>
+                    <a href="#"><img src="assets\home-material\cloth-icon.png" alt=""></a><a href="#">Clothing</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/shose-icon.png" alt=""></a><a href="#">Shose</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/gift-icon.png" alt=""></a><a href="#">Gifts & Flowers</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/health-icon.png" alt=""></a><a href="#">Health & Beauty</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/bag-icon.png" alt=""></a><a href="#">Accessories & Bags</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/homeware-icon.png" alt=""></a><a href="#">Homeware</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/baby-icon.png" alt=""></a><a href="#">Baby & Kids Products</a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/home-material/tour-icon.png" alt=""></a><a href="#">Tours & Travels</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content2">
+            <div class="lapi">
+                <a href=""><img src="assets/home-material/lapi-img.png" alt=""></a>
+            </div>
+            <div class="box">
+            <div class="box1">
+                <a href=""><img src="assets/home-material/shose-img.png" alt=""></a>
+            </div>
+            <div class="box2">
+                <a href=""><img src="assets/home-material/bag-img.png" alt=""></a>
+            </div>
+            <div class="box3">
+                <a href=""><img src="assets/home-material/bottle-img.png" alt=""></a>
+            </div>
+
+        </div>
+        </div>
+        <div class="content3">
+            <div class="box4">
+                <p id="p-pink">Offer of the Day</p>
+                <p id="box4-p">80% Off on Sundays <br>
+                flat 6.4% Cashback <br>
+                VISIT <br>
+                MERCHANTCODE</p>
+                <button>Get Discount</button>
+            </div>
+            <h6>Sugggestion for you</h6>
+            <div class="box5">
+                <img src="assets/home-material/cashback-img.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="line">
+    </div>
+    <div class="content4">
+        <p>Deals of the Day <span>|</span> <a href="">19 : 38 : 10 Left</a></p>
+        <a href="" id="view-deals">View All Deals</a>
+    </div>
+    <div class="content5">
+        <div class="card-1">
+            <div class="img">
+                <img class="logo-img" src="assets/home-material/card1.png" alt="">
+                <img class="big-img" src="assets/home-material/card1-1.png" alt="">
+            </div>
+            <p class="cashback">Upto 8% Cashback</p>
+            <div class="amount">
+                <p class="line-dashed">$2,489.00</p>
+                <p>$1,947.00</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+            
+        </div>
+        <div class="card-1">
+            <div class="img">
+            <img class="logo-img" src="assets/home-material/card2.png" alt="">
+            <img class="big-img" src="assets/home-material/card2-2.png" alt="">
+        </div>
+            <p class="cashback">Upto 80% Cashback</p>
+            <div class="amount">
+                <p class="line-dashed">$300.00</p>
+                <p>$294.00</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+        </div>
+        <div class="card-1">
+            <div class="img">
+                <img class="logo-img" src="assets/home-material/card3.png" alt="">
+                <img class="big-img" src="assets/home-material/card3-3.png" alt="">
+            </div>
+            <p class="cashback">Upto 36.5% Cashback</p>
+            <div class="amount">
+                <p class="line-dashed">$7,000.00</p>
+                <p>$4,799.00</p> 
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+        </div>
+        <div class="card-1">
+            <div class="img">
+                <img class="logo-img" src="assets/home-material/card4.png" alt="">
+                <img class="big-img" src="assets/home-material/card4-4.png" alt="">
+            </div>
+            <p class="cashback">Upto 8% Cashback</p>
+            <div class="amount">
+                <p class="line-dashed">$2,489.00</p>
+                <p>$1,947.00</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+        </div>
+        <div class="card-1">
+            <div class="img">
+                <img class="logo-img" src="assets/home-material/card1.png" alt="">
+                <img class="big-img" src="assets/home-material/card5-5.png" alt="">
+            </div>
+            <p class="cashback">Upto 80% Cashback</p>
+            <div class="amount">
+                <p class="line-dashed">$25,382.00</p>
+                <p>$1,947.00</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="line-2">
+</div>
+<div>
+<div class="container">
+    <p>How It Works?</p>
+    <div class="sub-container">
+    <div class="left-content">
+        <div class="icon-info">
+        <div class="icon">
+            <img src="assets/home-material/browser-icon.png" alt="">
+        </div>
+        <div class="info">
+            <h5>01. Browse</h5>
+            <p>Browse Cashback and choose from thousands of stores</p>
+        </div>
+    </div>
+    <div class="icon-info">
+        <div class="icon">
+            <img src="assets/home-material/earn-icon.png" alt="">
+        </div>
+        <div class="info">
+            <h5>03. Earn</h5>
+            <p>Cash back is added to your account</p>
+        </div>
+    </div>
+    </div>
+    <div class="right-content">
+        <div class="icon-info">
+            <div class="icon">
+                <img src="assets/home-material/trolley-icon.png" alt="">
+            </div>
+            <div class="info">
+                <h5>02. Shop</h5>
+                <p>Follow the link to your favorite store or deal and purchase as normal</p>
+            </div>
+        </div>
+        <div class="icon-info">
+            <div class="icon">
+                <img src="assets/home-material/money-withdrawal-icon.png" alt="">
+            </div>
+            <div class="info">
+                <h5>04. Withdraw</h5>
+                <p>Request payment and get paid via back tranfer, PayPal or gift voucher.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+=================================================================================================================================================
+
+
+home.component.css :- 
+
+
+
+*{
+    /* border: 1px solid red; */
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap'); */
+
+.main-home{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    /* background-color: #EFF2F7; */
+    /* background-color: #5F9BFF; */
+}
+
+.home{
+    display: flex;
+    background-color: brown;
+}
+
+.sidebar{
+    text-align: center;
+    /* height: 700px; */
+    /* width: 10%; */
+    /* padding: 20px; */
+    padding-top: 25px;
+    margin-left: 10px;
+    background-color: white;
+    /* background-color: wheat; */
+    /* gap: 10px; */
+}
+
+.side-field-1{
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 20px; */
+    /* gap: 5px; */
+}
+
+.side-field-1 img{
+    height: 30px;
+    width: 30px;
+}
+
+.side-field-1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+    padding: 10px;
+}
+
+.navbar-main{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    /* height: auto;
+    width: auto;     */
+    /* width: 90%; */
+    /* background-color: brown; */
+    background-color: #EFF2F7;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    padding-top: 10px;
+    width: 100%;
+}
+
+.navbar nav{
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav #logo{
+    margin-right: 30px;
+    width: 180px;
+    height: 36px;
+}
+.navbar nav input{
+    border: 1px solid red;
+    width: 250px;
+    height: 30px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 30px;
+    margin-left: 20px;
+    border: 0;
+    outline: none;
+    /* border: 1px solid grey; */
+}
+
+::placeholder{
+    font-size: 13px;
+}
+
+.navbar nav select{
+    border: none;
+    /* margin-left: 40px; */
+    margin: 0px 0px 0px 30px;
+    padding: 0px 15px;
+    background-color: transparent;
+}
+
+.navbar nav ul{
+    display: flex;
+    margin-top: 20px;
+}
+
+.navbar nav ul li{
+    list-style: none;
+    margin: 0px 30px;
+    /* padding: 15px; */
+}
+
+.navbar nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.navbar nav #man-logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 100%;
+        margin-left: 50px;
+        margin-top: 5px;
+      }
+
+.main-content{
+    display: flex;
+    /* flex-direction: column; */
+    /* height: 100%; */
+    /* width: 90%; */
+    /* background-color: wheat; */
+}   
+
+.content{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    width:300px;
+    padding-top: 40px;
+    /* margin: 10px; */
+    margin: 15px 5px 0px 15px;
+}
+
+.content a img{
+    height: 31px;
+    width: 31px;
+    /* padding-left: 10px; */
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+}
+
+.content ul li{
+    /* border: 1px solid red; */
+    list-style: none;
+    display: flex;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}
+
+.content ul li a{
+    text-decoration: none;
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+   font-size: 15px;
+   padding-right: 20px;
+   color: black;
+}
+
+.content2{
+    /* background-color: greenyellow; */
+    margin-top: 5px;
+    /* height: 510px; */
+    width: 665px;
+}
+
+.lapi{
+    /* background-color: cyan; */
+    /* margin-top: 10px; */
+    padding: 10px;
+    /* width:645px; */
+}
+
+.lapi a img{
+    margin-top: 1px;
+    height: 258px;
+    width:645px;
+}
+
+.box{
+    display: flex;
+    /* height: 259px; */
+    /* width:645px; */
+    /* background-color: blue; */
+    /* border: 1px solid red; */
+    /* margin-top: 10px; */
+}
+
+.box1{
+    background-color: white;
+    height:230px;
+    width: 215px;
+    padding: 30px;
+    margin-left: 10px;
+    /* text-align: center; */
+    /* margin-top: 8px; */
+}
+
+.box1 a img{
+    height:150px;
+    width: 150px;
+}
+
+.box2{
+    background-color:white;
+    /* height: 230px; */
+    width: 230px;
+    padding: 30px;
+    margin-left: 10px;
+    /* margin-top: 8px; */
+}
+
+.box2 a img{
+    height:150px;
+    width: 150px;
+}
+
+.box3{
+    background-color: white;
+    height: 230px;
+    width: 215px;
+    padding: 30px;
+    /* margin-left: 10px; */
+    margin: 0px 10px;
+    /* margin-top: 8px; */
+}
+
+.box3 a img{
+    height:150px;
+    width: 145px;
+}
+
+.content3{
+    /* background-color: blue; */
+    margin-top: 5px;
+    height: 510px;
+    width: auto;
+}
+
+.box4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    /* border: 1px solid red; */
+    height: 230px;
+    width: 228px;
+    margin: 10px 5px;
+}
+
+.box4 #p-pink{
+font-size: 13px;
+margin: 0px 0px 20px 0px ;
+color: rgb(255, 139, 158);
+}
+
+.box4 #box4-p{
+    font-size: 14px;
+    
+}
+
+
+.box4 button{
+    padding: 2px 10px;
+    font-size: 13px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.content3 h6{
+    margin-left: 10px;
+    padding: 5px 0px;
+}
+
+.box5{
+    /* background-color: burlywood; */
+    height: 222px;
+    width: 228px;
+    /* margin-top: 50px; */
+    margin: 6px;
+}
+
+.box5 img{
+    height: 222px;
+    width: 228px;
+}
+
+
+.line{
+    width: 98%;
+    border-top: 2px solid grey;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.content4{
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    /* height: 510px; */
+    /* max-width: 50%; */
+    width: 99%;
+    justify-content: space-between;
+    padding: 20px 10px 20px 10px;
+    margin-left: 10px;
+}
+
+.content4 p{
+    font-weight: bold;
+}
+
+.content4 p span{
+    padding: 0px 10px;
+    color: gray;
+}
+.content4 p a{
+    text-decoration: none;
+    color: red;
+}
+
+#view-deals{
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.content5{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    /* gap: 20px; */
+    /* align-items: center; */
+    /* background-color: orange; */
+}
+
+.card-1{
+    background-color: white;
+    text-align: center;
+    height: 300px;
+    width: 217px;
+    padding: 20px;
+}
+
+.card-1 img{
+    /* height: 50px;
+    width: 50px; */
+}
+
+.card-1 .cashback{
+    color: #FF9900;
+    margin-top: 10px;
+}
+
+.amount{
+    display: flex;
+    justify-content: space-around;
+}
+
+.line-dashed{
+    text-decoration:line-through;
+    color: gray;
+}
+
+.img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img{
+    width: 79px;
+    height: 32px;
+}
+
+.big-img{
+    margin-top: 20px;
+    width: 106px;
+    height: 106px;
+
+}
+
+.btn-1{
+    /* height: ; */
+    /* width: 20px; */
+    padding: 2px 10px;
+    font-size: 13px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #5F9BFF;
+    ;
+    border-radius: 15px;
+    /* margin-top: 20px; */
+}
+
+/* .line-2{
+    width: auto;
+    border-top: 2px solid grey;
+    margin: 20px 0px;
+} */
+
+.container{
+    /* display: fle/ */
+    width: 100%;
+    /* height: auto; */
+    /* background-color: wheat; */
+    background-color: blue;
+}
+
+.sub-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    /* width: 100%; */
+    /* height: 100%; */
+    
+}
+
+.left-content{
+   /* text-align: center; */
+   padding: 100px;
+}
+
+.icon-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 50px;
+}
+
+.icon img{
+    width: 65px;
+    height: 65px;
+}
+
+.right-content{
+    text-align: center;
+    justify-content: center;
+ }
+
+
+
+
+ ======================================================================================
+
+
+ home.css:-
+
+ *{
+    /* background-color: cyan; */
+}
+.main-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+    width: 100%;
+    flex-direction: column;
+    /* background-color: #EFF2F7; */
+    /* background-color: #5F9BFF; */
+}
+
+.home{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* min-height: 50%;
+    min-width: 50%; */
+    background-color: brown;
+}
+
+.sidebar{
+    width: 10%;
+    text-align: center;
+    background-color: white;
+    margin-left: 10px;
+    /* background-color: wheat; */
+}
+
+.side-field-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.side-field-1 img{
+    height: 30px;
+    width: 30px;
+}
+
+.side-field-1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+    padding: 10px;
+}
+
+
+.navbar-main{
+    /* background-color: #EFF2F7; */
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    /* width: 100%; */
+    padding: 0px 20px;
+
+}
+
+.navbar nav{
+    /* display: flex; */
+    align-items: center;
+}
+
+.navbar nav #logo{
+    margin-left: 20px;
+    width: 180px;
+    height: 36px;
+}
+.navbar nav input{
+    /* border: 1px solid red; */
+    width: 250px;
+    height: 30px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 30px;
+    margin-left: 20px;
+    border: 0;
+    outline: none;
+    /* border: 1px solid grey; */
+}
+
+::placeholder{
+    font-size: 13px;
+}
+
+.navbar nav select{
+    border: none;
+    margin-left: 20px;
+    margin: 0px 0px 0px 30px;
+    padding: 0px 15px;
+    background-color: transparent;
+}
+
+.navbar nav ul{
+    display: flex;
+    margin-top: 20px;
+}
+
+.navbar nav ul li{
+    list-style: none;
+    margin: 0px 20px;
+    padding: 15px;
+}
+
+.navbar nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.navbar nav #man-logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 100%;
+        /* margin-left: 50px; */
+        /* margin-top: 5px; */
+      }
+
+
+
+      .main-content{
+        display: flex;
+        /* flex-direction: column; */
+        height: 100%;
+        width: 100%;
+        background-color: wheat;
+    }   
+    
+    .content{
+        background-color: white;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; */
+        height: 500px;
+        width:300px;
+        padding-top: 40px;
+        /* margin: 10px; */
+        margin: 15px 5px 0px 15px;
+    }
+    
+    .content a img{
+        height: 31px;
+        width: 31px;
+        /* padding-left: 10px; */
+        display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    
+    }
+    
+    .content ul li{
+        /* border: 1px solid red; */
+        list-style: none;
+        display: flex;
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+    }
+    
+    .content ul li a{
+        text-decoration: none;
+        display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+       font-size: 15px;
+       padding-right: 20px;
+       color: black;
+    }
+    
+    .content2{
+        background-color: greenyellow;
+        margin-top: 5px;
+        height: 510px;
+        width: 665px;
+    }
+    
+    .lapi{
+        /* background-color: cyan; */
+        /* margin-top: 10px; */
+        padding: 10px;
+        width:645px;
+    }
+    
+    .lapi a img{
+        margin-top: 1px;
+        height: 258px;
+        width:645px;
+    }
+    
+    .box{
+        display: flex;
+        height: 259px;
+        width:645px;
+        /* background-color: blue; */
+        /* border: 1px solid red; */
+        /* margin-top: 10px; */
+    }
+    
+    .box1{
+        background-color: white;
+        height:230px;
+        width: 215px;
+        padding: 30px;
+        margin-left: 10px;
+        /* text-align: center; */
+        /* margin-top: 8px; */
+    }
+    
+    .box1 a img{
+        height:150px;
+        width: 150px;
+    }
+    
+    .box2{
+        background-color:white;
+        height: 230px;
+        width: 230px;
+        padding: 30px;
+        margin-left: 10px;
+        /* margin-top: 8px; */
+    }
+    
+    .box2 a img{
+        height:150px;
+        width: 150px;
+    }
+    
+    .box3{
+        background-color: white;
+        height: 230px;
+        width: 215px;
+        padding: 30px;
+        /* margin-left: 10px; */
+        margin: 0px 10px;
+        /* margin-top: 8px; */
+    }
+    
+    .box3 a img{
+        height:150px;
+        width: 145px;
+    }
+    
+    .content3{
+        /* background-color: blue; */
+        margin-top: 5px;
+        /* height: 510px; */
+        /* width: auto; */
+    }
+    
+    .box4{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+        background-color: white;
+        /* border: 1px solid red; */
+        height: 230px;
+        width: 228px;
+        margin: 10px 5px;
+    }
+    
+    .box4 #p-pink{
+    font-size: 13px;
+    margin: 0px 0px 20px 0px ;
+    color: rgb(255, 139, 158);
+    }
+    
+    .box4 #box4-p{
+        font-size: 14px;
+        
+    }
+    
+    
+    .box4 button{
+        padding: 2px 10px;
+        font-size: 13px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: black;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+    
+    .content3 h6{
+        margin-left: 10px;
+        padding: 5px 0px;
+    }
+    
+    .box5{
+        /* background-color: burlywood; */
+        /* height: 222px; */
+        /* width: 228px; */
+        /* margin-top: 50px; */
+        margin: 6px;
+    }
+    
+    .box5 img{
+        height: 222px;
+        width: 228px;
+    }
+
+
+ ==========================================================================
+
+
+home.html:-
+
+
+    <div class="main-home">
+    <div class="home">
+        <div class="sidebar">
+            <div class="side-field-1">
+                <a href=""><img src="https://api.iconify.design/ep:expand.svg" alt=""></a>
+                <a href="">Best Deals</a>
+            </div>
+            <div class="side-field-1">
+                <a href=""><img src="assets/home-material/icon2.png" alt=""></a>
+                <a href="">Others</a>
+            </div>
+            <div class="side-field-1">
+                <a href=""><img src="assets/home-material/icon3.png" alt=""></a>
+                <a href="">Kitchen</a>
+            </div>
+            <div class="side-field-1">
+                <a href=""><img src="assets/home-material/icon4.png" alt=""></a>
+                <a href="">Home Appliances</a>
+            </div>
+            <div class="side-field-1">
+                <a href=""><img src="assets/home-material/icon5.png" alt=""></a>
+                <a href="">Home & Kitchen</a>
+            </div>
+            <div class="side-field-1">
+                <a href=""><img src="assets/home-material/icon6.png" alt=""></a>
+                <a href="">Baby & Kids</a>
+            </div>
+            <div class="side-field-1">
+                <a href=""><img src="assets/home-material/icon7.png" alt=""></a>
+                <a href="">Watches</a>
+            </div>
+        </div>
+        <div class="navbar-main">
+            <div class="navbar">
+                <nav>
+                    <img src="assets/home-material/home-logo.png" alt="" id="logo">
+                    <input type="text" placeholder="Search Store">
+                    <select name="" id="" >
+                        <option value="">offers</option>
+                        <option value="">home</option>
+                        <option value="">about</option>
+                        <option value="">contact</option>
+                    </select>
+                    <select name="" id="" >
+                        <option value="">Expore</option>
+                        <option value="">home</option>
+                        <option value="">about</option>
+                        <option value="">contact</option>
+                    </select>
+                    <ul>
+                        <li><a href="singup">Sing In</a></li>
+                        <li><a href="#">Join Us</a></li>
+                    </ul>
+                    <img src="assets/home-material/man-logo.png" alt="" id="man-logo">
+                </nav>
+            </div>
+            <!-- <div class="main-content">
+                <div class="content">
+                    <p>Handpicked Coupon Categories</p>
+                    <ul>
+                        <li>
+                            <a href="#"><img src="assets\home-material\cloth-icon.png" alt=""></a><a href="#">Clothing</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/shose-icon.png" alt=""></a><a href="#">Shose</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/gift-icon.png" alt=""></a><a href="#">Gifts & Flowers</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/health-icon.png" alt=""></a><a href="#">Health & Beauty</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/bag-icon.png" alt=""></a><a href="#">Accessories & Bags</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/homeware-icon.png" alt=""></a><a href="#">Homeware</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/baby-icon.png" alt=""></a><a href="#">Baby & Kids Products</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/home-material/tour-icon.png" alt=""></a><a href="#">Tours & Travels</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content2">
+                    <div class="lapi">
+                        <a href=""><img src="assets/home-material/lapi-img.png" alt=""></a>
+                    </div>
+                    <div class="box">
+                    <div class="box1">
+                        <a href=""><img src="assets/home-material/shose-img.png" alt=""></a>
+                    </div>
+                    <div class="box2">
+                        <a href=""><img src="assets/home-material/bag-img.png" alt=""></a>
+                    </div>
+                    <div class="box3">
+                        <a href=""><img src="assets/home-material/bottle-img.png" alt=""></a>
+                    </div>
+        
+                </div>
+                </div>
+                <div class="content3">
+                    <div class="box4">
+                        <p id="p-pink">Offer of the Day</p>
+                        <p id="box4-p">80% Off on Sundays <br>
+                        flat 6.4% Cashback <br>
+                        VISIT <br>
+                        MERCHANTCODE</p>
+                        <button>Get Discount</button>
+                    </div>
+                    <h6>Sugggestion for you</h6>
+                    <div class="box5">
+                        <img src="assets/home-material/cashback-img.png" alt="">
+                    </div>
+                </div>
+
+            </div> -->
+        </div>    
+    </div>
+</div>
+
+
+============================================================================================
+
+break point for media query
+
+
+============================================================================================
+
+   <!-- <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                            </div>
+                            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    <div class="sm:flex sm:items-start">
+                                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                                            
+                                            <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                                                Popup Title
+                                            </h3>
+                                            <div class="mt-2">
+                                                
+                                                <p class="text-sm text-gray-500">
+                                                    This is the content of the popup. You can add any HTML content here.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm" (click)="closePopup()">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div> -->

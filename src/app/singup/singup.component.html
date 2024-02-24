@@ -1,92 +1,98 @@
-
 <div class="main">
   <div class="container">
-  <div class="left">
-    <div class="form-field">
-      <h4>Create an account with V - Mart</h4>
-      <p>Already have an account? <a href="">Sing in</a></p>
-      <form (ngSumbit)="registerForm.status !== 'INVALID' && 'onSubmit()'" [formGroup]="registerForm">
-        <label for="">Username*</label><br>
-        <input type="text" name="username" id="username" formControlName="username"
-        [ngClass]="{'error': getControl('username')?.errors && getControl('username')?.touched}"><br>
-        <div *ngIf="getControl('username')?.errors && getControl('username')?.touched">
-          <small class="small" *ngIf="getControl('username')?.errors?.['required']">UserName is Required</small>
-          <small class="small"
-            *ngIf="getControl('username')?.errors?.['minlength'] || getControl('username')?.errors?.['pattern']">Enter a
-            valid name</small>
-        </div>
-        <label for="">Email*</label><br>
-        <input type="email" name="email" id="email" formControlName="email"
-        [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}"><br>
-        <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
-          <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
-          <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
-        </div>
-        <label for="">Mobile No*</label><br>
-        <input type="text" name="mobile" id="mobile" formControlName="mobile"
-        [ngClass]="{'error': getControl('mobile')?.errors && getControl('mobile')?.touched}"><br>
-        <div *ngIf="getControl('mobile')?.errors && getControl('mobile')?.touched">
-          <small class="small" *ngIf="getControl('mobile')?.errors?.['required']">Mobile no is Required</small>
-          <!-- <small class="small" *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">Please Enter a Valid mobile number</small> -->
-          <small class="small"
-            *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">
-            Enter Valid mobile number</small>
-        </div>
-        <div class="password-container">
-        <label for="">Password*</label><br>
-        <input type="password" name="password" id="password" formControlName="password"
-        [ngClass]="{'error' : getControl('password')?.errors && getControl('password')?.touched}"><br>
-        <i class=" fa fa-eye-slash" id="icon" onclick="togglePasswordVisibility()"></i>
-      </div>
-        <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
-          <small class="small" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
-          <small class="small"
-            *ngIf="getControl('password')?.errors?.['maxlength']  || getControl('password')?.errors?.['minlength'] || getControl('password')?.errors?.['pattern']">length 8 must lowar upper and symbol</small>
-        </div>
-        <label for="">Confirm Password*</label><br>
-        <input type="password" name="confirm-password" id="confirm_password" formControlName="confirm_password"
-        [ngClass]="{'error' : getControl('confirm_password')?.errors && getControl('confirm_password')?.touched}"><br>
-        <div *ngIf="getControl('confirm_password')?.errors && getControl('confirm_password')?.touched">
-          <small class="small" *ngIf="getControl('confirm_password')?.errors?.['required']">Confirm Password is
-            Required</small>
-        </div>
-        <div *ngIf="registerForm.errors?.['passwordMismatch'] &&  getControl('confirm_password')?.touched">
-          <small class="small">Password Mismatch</small>
-        </div>
+    <div class="left">
+      <div class="form-field">
+        <h4>Create an account with V - Mart</h4>
+        <p>Already have an account? <a href="login">Login</a></p>
+        <form (ngSubmit)="registerForm.status !== 'INVALID' && onSubmit()" [formGroup]="registerForm">
+          <label for="">Username*</label><br>
+          <input type="text" name="username" id="username" formControlName="username"
+            [ngClass]="{'error': getControl('username')?.errors && (getControl('username')?.touched)}"><br>
+          <div *ngIf="getControl('username')?.errors && (getControl('username')?.touched)">
+            <small class="small" *ngIf="getControl('username')?.errors?.['required']">UserName is Required</small>
+            <small class="small"
+              *ngIf="getControl('username')?.errors?.['minlength'] || getControl('username')?.errors?.['pattern']">Enter
+              a
+              valid name</small>
+          </div>
+          <label for="">Email*</label><br>
+          <input type="email" name="email" id="email" formControlName="email"
+            [ngClass]="{'error' : getControl('email')?.errors && (getControl('email')?.touched )}"><br>
+          <div *ngIf="getControl('email')?.errors && (getControl('email')?.touched)">
+            <small class="small" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
+            <small class="small" *ngIf="getControl('email')?.errors?.['pattern']">Enter Valide Email</small>
+          </div>
+          <label for="">Mobile No*</label><br>
+          <input type="text" name="mobile" id="mobile" formControlName="mobile"
+            [ngClass]="{'error': getControl('mobile')?.errors && (getControl('mobile')?.touched)}"><br>
+          <div *ngIf="getControl('mobile')?.errors && (getControl('mobile')?.touched)">
+            <small class="small" *ngIf="getControl('mobile')?.errors?.['required']">Mobile no is Required</small>
+            <!-- <small class="small" *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">Please Enter a Valid mobile number</small> -->
+            <small class="small"
+              *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">
+              Enter Valid mobile number</small>
+          </div>
+          <div class="password-container">
+            <label for="">Password*</label><br>
+            <input type="password" name="password" id="password" formControlName="password"
+              [ngClass]="{'error' : getControl('password')?.errors && (getControl('password')?.touched)}"><br>
+            <i class=" fa fa-eye-slash" id="icon" onclick="togglePasswordVisibility()"></i>
+          </div>
+          <div *ngIf="getControl('password')?.errors && (getControl('password')?.touched)">
+            <small class="small" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
+            <small class="small"
+              *ngIf="getControl('password')?.errors?.['maxlength']  || getControl('password')?.errors?.['minlength'] || getControl('password')?.errors?.['pattern']">length
+              8 must lowar upper and symbol</small>
+          </div>
+          <label for="">Confirm Password*</label><br>
+          <input type="password" name="confirm-password" id="confirm_password" formControlName="confirm_password"
+            [ngClass]="{'error' : getControl('confirm_password')?.errors && (getControl('confirm_password')?.touched)}"><br>
+          <div *ngIf="getControl('confirm_password')?.errors && (getControl('confirm_password')?.touched)">
+            <small class="small" *ngIf="getControl('confirm_password')?.errors?.['required']">Confirm Password is
+              Required</small>
+          </div>
+          <div *ngIf="registerForm.errors?.['passwordMismatch'] &&  getControl('confirm_password')?.touched">
+            <small class="small">Password Mismatch</small>
+          </div>
 
-        <input type="submit" id="btn" value="sing in" [disabled]="registerForm.status === 'INVALID'">
-      </form>
+          <input type="submit" id="btn" value="sing in" [disabled]="registerForm.status === 'INVALID'">
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="right">
-    <div class="img-field slider-item">
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="right">
+      <div class="img-field slider-item">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/singup-material/image 2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/singup-material/image 3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/singup-material/image 4.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/singup-material/image 2.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/singup-material/image 3.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/singup-material/image 4.png" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   </div>
-</div>
 </div>

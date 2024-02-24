@@ -6,11 +6,14 @@ import { SingupComponent } from './singup/singup.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
   // {path:'',component:AppComponent},
   {path:'login',component:LoginComponent},
   {path:'singup',component:SingupComponent},
+  {path:'category',component:CategoryComponent},
+  {path:'home',component:HomeComponent},
   {path:'',component:HomeComponent},
   // {path:'header',component:HeaderComponent},
   // {path:'footer',component:FooterComponent}

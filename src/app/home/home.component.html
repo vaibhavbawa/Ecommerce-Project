@@ -1,35 +1,36 @@
 <div class="main-home">
-    <div class="home">
-    <div class="sidebar">
-        <div class="side-field-1">
-            <a href=""><img src="https://api.iconify.design/ep:expand.svg" alt=""></a>
-            <a href="">Best Deals</a>
+    <div class="page-1">
+    <!-- <div class="sidebar">
+        <div class="side-field-1" *ngFor="let category of couponCategories">
+            <a href="#" ><img [src]="category.sub_imgUrl" alt=""></a>
+            <a href="#" >{{ category.sub_name }}</a>
+        </div> -->
+
+        <!-- <div class="side-field-1">
+            <a href=><img src="assets/home-material/icon2.png" alt=""></a>
+            <a href=>Others</a>
         </div>
         <div class="side-field-1">
-            <a href=""><img src="assets/home-material/icon2.png" alt=""></a>
-            <a href="">Others</a>
+            <a href="#"><img src="assets/home-material/icon3.png" alt=""></a>
+            <a href="#">Kitchen</a>
         </div>
         <div class="side-field-1">
-            <a href=""><img src="assets/home-material/icon3.png" alt=""></a>
-            <a href="">Kitchen</a>
+            <a href="#" ><img src="assets/home-material/icon4.png" alt=""></a>
+            <a href="#">Home Appliances</a>
         </div>
         <div class="side-field-1">
-            <a href=""><img src="assets/home-material/icon4.png" alt=""></a>
-            <a href="">Home Appliances</a>
+            <a href="#" ><img src="assets/home-material/icon5.png" alt=""></a>
+            <a href="#">Home & Kitchen</a>
         </div>
         <div class="side-field-1">
-            <a href=""><img src="assets/home-material/icon5.png" alt=""></a>
-            <a href="">Home & Kitchen</a>
+            <a href="#"><img src="assets/home-material/icon6.png" alt=""></a>
+            <a href="#">Baby & Kids</a>
         </div>
         <div class="side-field-1">
-            <a href=""><img src="assets/home-material/icon6.png" alt=""></a>
-            <a href="">Baby & Kids</a>
-        </div>
-        <div class="side-field-1">
-            <a href=""><img src="assets/home-material/icon7.png" alt=""></a>
-            <a href="">Watches</a>
-        </div>
-    </div>
+            <a href="#"><img src="assets/home-material/icon7.png" alt=""></a>
+            <a href="#">Watches</a>
+        </div> -->
+    <!-- </div> -->
     <div class="navbar-main">
     <div class="navbar">
         <nav>
@@ -48,57 +49,77 @@
                 <option value="">contact</option>
             </select>
             <ul>
-                <li><a href="singup">Sing In</a></li>
+                <li><a routerLink="singup">Sing In</a></li>
                 <li><a href="#">Join Us</a></li>
             </ul>
             <img src="assets/home-material/man-logo.png" alt="" id="man-logo">
         </nav>
     </div>
         <div class="main-content">
-        <div class="content">
+            <div class="content">
+                <p>Handpicked Coupon Categories</p>
+                <ul>
+                  <li *ngFor="let category of couponCategories">
+                    <a href="#"><img [src]="category.imageUrl" alt=""></a>
+                    <a href="#">{{ category.name }}</a>
+                  </li>
+                </ul>
+              </div>
+        <!-- <div class="content">
             <p>Handpicked Coupon Categories</p>
             <ul>
                 <li>
-                    <a href="#"><img src="assets\home-material\cloth-icon.png" alt=""></a><a href="#">Clothing</a>
+                    <a href="#"><img src="assets\home-material\cloth-icon.png" alt=""></a>
+                    <a href="#">Clothing</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/shose-icon.png" alt=""></a><a href="#">Shose</a>
+                    <a href="#"><img src="assets/home-material/shose-icon.png" alt=""></a>
+                    <a href="#">Shose</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/gift-icon.png" alt=""></a><a href="#">Gifts & Flowers</a>
+                    <a href="#"><img src="assets/home-material/gift-icon.png" alt=""></a>
+                    <a href="#">Gifts & Flowers</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/health-icon.png" alt=""></a><a href="#">Health & Beauty</a>
+                    <a href="#"><img src="assets/home-material/health-icon.png" alt=""></a>
+                    <a href="#">Health & Beauty</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/bag-icon.png" alt=""></a><a href="#">Accessories & Bags</a>
+                    <a href="#"><img src="assets/home-material/bag-icon.png" alt=""></a>
+                    <a href="#">Accessories & Bags</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/homeware-icon.png" alt=""></a><a href="#">Homeware</a>
+                    <a href="#"><img src="assets/home-material/homeware-icon.png" alt=""></a>
+                    <a href="#">Homeware</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/baby-icon.png" alt=""></a><a href="#">Baby & Kids Products</a>
+                    <a href="#"><img src="assets/home-material/baby-icon.png" alt=""></a>
+                    <a href="#">Baby & Kids Products</a>
                 </li>
                 <li>
-                    <a href="#"><img src="assets/home-material/tour-icon.png" alt=""></a><a href="#">Tours & Travels</a>
+                    <a href="#"><img src="assets/home-material/tour-icon.png" alt=""></a>
+                    <a href="#">Tours & Travels</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <div class="content2">
             <div class="lapi">
-                <a href=""><img src="assets/home-material/lapi-img.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/lapi-img.png" alt=""></a>
+                <!-- <img [src]="currentImage" alt="Slider Image"> -->
             </div>
             <div class="box">
             <div class="box1">
-                <a href=""><img src="assets/home-material/shose-img.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/shose-img.png" alt=""></a>
             </div>
             <div class="box2">
-                <a href=""><img src="assets/home-material/bag-img.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/bag-img.png" alt=""></a>
             </div>
             <div class="box3">
-                <a href=""><img src="assets/home-material/bottle-img.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/bottle-img.png" alt=""></a>
             </div>
-
+            <div class="box3">
+                <a href="#"><img src="assets/home-material/camera.png" alt=""></a>
+            </div>
         </div>
         </div>
         <div class="content3">
@@ -119,11 +140,75 @@
     <div class="line">
     </div>
     <div class="content4">
-        <p>Deals of the Day <span>|</span> <a href="">19 : 38 : 10 Left</a></p>
+        <p>Deals of the Day <span>|</span> <a href="#">19 : 38 : 10 Left</a></p>
         <a href="" id="view-deals">View All Deals</a>
     </div>
-    <div class="content5">
-        <div class="card-1">
+     <!-- <div class="content5">
+        <div *ngFor="let product of products" class="card-1">
+            <div class="img">
+                <img [src]="product.imgLogo" [alt]="product.name" class="logo-img">
+                <img [src]="product.imageUrl" [alt]="product.name" class="big-img">
+            </div>
+            <p class="cashback">{{product.name}}</p>
+            <div class="amount">
+                <p class="line-dashed">{{ '$' + product.price }}</p>
+                <p>{{ '$' + product.disc_price }}</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+        </div>
+     </div> -->
+
+     <div class="content5">
+        <div *ngFor="let product of getCurrentPageProducts()" class="card-1">
+            <div class="img">
+                <img [src]="product.imgLogo" [alt]="product.name" class="logo-img">
+                <img [src]="product.imageUrl" [alt]="product.name" class="big-img">
+            </div>
+            <p class="cashback">{{product.name}}</p>
+            <div class="amount">
+                <p class="line-dashed">{{ '$' + product.price }}</p>
+                <p>{{ '$' + product.disc_price }}</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div>
+        </div>
+      </div>
+
+      <!-- <swiper-container class="mySwiper" watch-slides-progress="true" slides-per-view="3">
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide>
+      </swiper-container> -->
+
+      <div class="pagination">
+        <button *ngFor="let page of getPages()" (click)="onPageChange(page)" [class.active]="currentPage === page">
+          {{ page }}
+        </button>
+      </div>
+
+        <!-- <div class="card-1">
+            <div class="img">
+                <img class="logo-img" src="assets/home-material/card1.png" alt="">
+                <img class="big-img" src="assets/home-material/card1-1.png" alt="">
+            </div>
+            <p class="cashback">Upto 8% Cashback</p>
+            <div class="amount">
+                <p class="line-dashed">$2,489.00</p>
+                <p>$1,947.00</p>
+            </div>
+            <div>
+                <button class="btn-1">Shop Now</button>
+            </div> -->
+        <!-- <div class="card-1">
             <div class="img">
                 <img class="logo-img" src="assets/home-material/card1.png" alt="">
                 <img class="big-img" src="assets/home-material/card1-1.png" alt="">
@@ -193,10 +278,98 @@
             <div>
                 <button class="btn-1">Shop Now</button>
             </div>
+        </div> -->
+    <!-- </div>  -->
+</div>
+</div>
+<div class="page-2">
+    <div class="line-2">
+    </div>
+    <div class="page-container">
+    <p id="para">How It Works?</p>
+    <div class="para-line"></div>
+    <div class="container">
+    <div class="left-content">
+        <div class="icon-info">
+        <div class="icon">
+            <img src="assets/home-material/browser-icon.png" alt="">
+        </div>
+        <div class="info">
+            <h5>01. Browse</h5>
+            <p>Browse Cashback and choose from thousands of stores</p>
+        </div>
+    </div>
+    <div class="icon-info">
+        <div class="icon">
+            <img src="assets/home-material/earn-icon.png" alt="">
+        </div>
+        <div class="info">
+            <h5>03. Earn</h5>
+            <p>Cash back is added to your account</p>
+        </div>
+    </div>
+    </div>
+    <div class="right-content">
+        <div class="icon-info">
+            <div class="icon">
+                <img src="assets/home-material/trolley-icon.png" alt="">
+            </div>
+            <div class="info">
+                <h5>02. Shop</h5>
+                <p>Follow the link to your favorite store or deal and purchase as normal</p>
+            </div>
+        </div>
+        <div class="icon-info">
+            <div class="icon">
+                <img src="assets/home-material/money-withdrawal-icon.png" alt="">
+            </div>
+            <div class="info">
+                <h5>04. Withdraw</h5>
+                <p>Request payment and get paid via back tranfer, PayPal or gift voucher.</p>
+            </div>
         </div>
     </div>
 </div>
 </div>
-<div class="line-2">
+<div class="footer-1">
+    <img src="assets/home-material/gift-icon-2.png" alt="">
+    <p>Join LarabackPRO Now and get a $50.00 Bonus Today! <br>
+    The best deals, sales,coupons & more than 10,000 offers you can find here.</p>
+    <button class="joid-btn">Join Now</button>
+</div>
+</div>
+<div class="page-3">
+<div class="footer">
+    <div class="left-foot">
+        <div class="links">
+            <h5>Links</h5>
+            <p> <a href="#">Privacy Policy</a> <a href="#">Terms & Condition</a> <a href="#">Refer & Earn</a></p>
+        </div>
+        <div class="followUs">
+            <h5>Follow Us</h5>
+            <div class="logos">
+                <a href="#"><img src="assets/home-material/insta-logo.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/fb-logo.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/twitter-logo.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/whats-logo.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/linkdin-logo.png" alt=""></a>
+                <a href="#"><img src="assets/home-material/telegram-logo.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="right-foot">
+        <div class="connectWithUs">
+            <h5>Connect With Us</h5>
+            <div class="mail">
+                <img src="assets/home-material/mail-logo.png" alt="">
+                <a href="#" >Info&#64;Vaibhavbawamq.com</a><br>
+            </div>
+            <div class="phone">
+                <img src="assets/home-material/phone-logo.png" alt="">
+                <a href="#" id="mail">+91 916 827 3019</a>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </div>

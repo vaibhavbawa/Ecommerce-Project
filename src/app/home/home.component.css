@@ -5,33 +5,30 @@
 
 .main-home{
     display: flex;
-    height: auto;
     width: 100%;
     flex-direction: column;
+    background-color: #5F9BFF;
+    /* background-color: #EFF2F7; */
 }
 
-.home{
-    background-color: #EFF2F7;
+.page-1{
     display: flex;
-    /* background-color: brown; */
+    height: 100%;
+    width: 100%;
 }
 
 .sidebar{
     text-align: center;
-    /* height: 600px; */
-    /* width: 10%; */
-    /* padding: 20px; */
-    padding-top: 25px;
+    width: 10%;
+    padding-top: 20px;
     margin-left: 10px;
     background-color: white;
-    /* gap: 10px; */
+    
 }
 
 .side-field-1{
     display: flex;
     flex-direction: column;
-    /* padding-top: 20px; */
-    /* gap: 5px; */
 }
 
 .side-field-1 img{
@@ -42,50 +39,45 @@
 .side-field-1 a{
     text-decoration: none;
     color: black;
-    font-size: 11px;
-    padding: 10px;
+    font-size: 13px;
+    padding: 10px 0px 10px 0px ;
 }
+
 
 .navbar-main{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-
-    /* height: auto;
-    width: auto;     */
-    /* width: 90%; */
-    /* background-color: brown; */
 }
 
 .navbar{
     display: flex;
     flex-direction: column;
-    /* background-color: blue; */
     padding-top: 10px;
     width: 100%;
 }
 
 .navbar nav{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .navbar nav #logo{
-    margin-right: 30px;
+    margin-left: 30px;
     width: 180px;
-    height: 36px;
 }
 .navbar nav input{
-    border: 1px solid red;
+    display: flex;
     width: 250px;
     height: 30px;
     padding: 5px 30px 5px 30px;
     border-radius: 30px;
-    margin-left: 20px;
+    margin-left: -20px;
     border: 0;
     outline: none;
-    /* border: 1px solid grey; */
+    border: 1px solid grey;
 }
 
 ::placeholder{
@@ -94,21 +86,20 @@
 
 .navbar nav select{
     border: none;
-    /* margin-left: 40px; */
-    margin: 0px 0px 0px 30px;
-    padding: 0px 15px;
+    margin: 0px -20px 0px -20px;
     background-color: transparent;
 }
+
 
 .navbar nav ul{
     display: flex;
     margin-top: 20px;
+    padding: 0;
 }
 
 .navbar nav ul li{
     list-style: none;
-    margin: 0px 30px;
-    /* padding: 15px; */
+    margin: 0px 20px;
 }
 
 .navbar nav ul li a{
@@ -118,19 +109,16 @@
 }
 
 .navbar nav #man-logo {
-        width: 76px;
-        height: 76px;
+        width: 56px;
+        height: 56px;
         border-radius: 100%;
-        margin-left: 50px;
+        margin-right: 20px;
         margin-top: 5px;
       }
 
 .main-content{
     display: flex;
-    /* flex-direction: column; */
-    height: 100%;
-    /* width: 90%; */
-    /* background-color: wheat; */
+    width: 100%;
 }   
 
 .content{
@@ -139,28 +127,23 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 500px;
     width:300px;
-    padding-top: 40px;
-    /* margin: 10px; */
-    margin: 15px 5px 0px 15px;
+   padding: 10px;
+    margin: 10px;
 }
 
 .content a img{
     height: 31px;
     width: 31px;
-    /* padding-left: 10px; */
     display: grid;
    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
 }
 
 .content ul li{
-    /* border: 1px solid red; */
     list-style: none;
     display: flex;
-    text-align: center;
-    padding: 10px 0px 10px 0px;
+
 }
 
 .content ul li a{
@@ -168,88 +151,67 @@
     display: grid;
    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
    font-size: 15px;
-   padding-right: 20px;
+   padding: 10px;
    color: black;
 }
 
 .content2{
-    /* background-color: greenyellow; */
-    margin-top: 5px;
-    /* height: 510px; */
-    width: 665px;
+    display: grid;
+    grid-gap: 10px;
 }
 
 .lapi{
-    /* background-color: cyan; */
-    /* margin-top: 10px; */
     padding: 10px;
-    /* width:645px; */
 }
 
 .lapi a img{
+    /* display: flex; */
     margin-top: 1px;
-    height: 258px;
-    width:645px;
+    height: 270px;
+    width:700px;
 }
 
 .box{
     display: flex;
-    /* height: 259px; */
-    /* width:645px; */
-    /* background-color: blue; */
-    /* border: 1px solid red; */
-    /* margin-top: 10px; */
+    grid-gap: 5px;
+    padding: 10px;
 }
 
 .box1{
     background-color: white;
-    height:230px;
-    width: 215px;
     padding: 30px;
-    margin-left: 10px;
-    /* text-align: center; */
-    /* margin-top: 8px; */
+    width: 170px;
 }
 
 .box1 a img{
-    height:150px;
-    width: 150px;
+    /* height:150px; */
+    width: 120px;
 }
 
 .box2{
     background-color:white;
-    /* height: 230px; */
-    width: 230px;
     padding: 30px;
-    margin-left: 10px;
-    /* margin-top: 8px; */
+    width: 170px;
 }
 
 .box2 a img{
-    height:150px;
-    width: 150px;
+    /* height:150px; */
+    width: 120px;
 }
 
 .box3{
     background-color: white;
-    height: 230px;
-    width: 215px;
     padding: 30px;
-    /* margin-left: 10px; */
-    margin: 0px 10px;
-    /* margin-top: 8px; */
+    width: 170px;
 }
 
 .box3 a img{
-    height:150px;
-    width: 145px;
+    /* height:150px; */
+    width: 120px;
 }
 
 .content3{
-    /* background-color: blue; */
-    margin-top: 5px;
-    height: 510px;
-    width: auto;
+    padding: 10px;
 }
 
 .box4{
@@ -259,10 +221,8 @@
     align-items: center;
     text-align: center;
     background-color: white;
-    /* border: 1px solid red; */
-    height: 230px;
+    height: 250px;
     width: 228px;
-    margin: 10px 5px;
 }
 
 .box4 #p-pink{
@@ -290,40 +250,31 @@ color: rgb(255, 139, 158);
 
 .content3 h6{
     margin-left: 10px;
-    padding: 5px 0px;
+    margin-top: 10px;
 }
 
 .box5{
-    /* background-color: burlywood; */
-    height: 222px;
-    width: 228px;
-    /* margin-top: 50px; */
-    margin: 6px;
+    margin-top: 35px;
 }
 
 .box5 img{
-    height: 222px;
+    height: 220px;
     width: 228px;
 }
 
 
 .line{
-    width: 98%;
+   
     border-top: 2px solid grey;
     margin-top: 30px;
     margin-left: 10px;
 }
 
 .content4{
-    /* background-color: orange; */
     display: flex;
     align-items: center;
-    /* height: 510px; */
-    /* max-width: 50%; */
-    width: 99%;
     justify-content: space-between;
     padding: 20px 10px 20px 10px;
-    margin-left: 10px;
 }
 
 .content4 p{
@@ -347,12 +298,9 @@ color: rgb(255, 139, 158);
 }
 
 .content5{
-    width: 100%;
     display: flex;
     justify-content: space-around;
-    /* gap: 20px; */
-    align-items: center;
-    /* background-color: orange; */
+    padding: 0;
 }
 
 .card-1{
@@ -360,12 +308,6 @@ color: rgb(255, 139, 158);
     text-align: center;
     height: 300px;
     width: 217px;
-    padding: 20px;
-}
-
-.card-1 img{
-    /* height: 50px;
-    width: 50px; */
 }
 
 .card-1 .cashback{
@@ -388,6 +330,7 @@ color: rgb(255, 139, 158);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 .logo-img{
@@ -403,21 +346,201 @@ color: rgb(255, 139, 158);
 }
 
 .btn-1{
-    /* height: ; */
-    /* width: 20px; */
-    padding: 2px 10px;
+    padding: 2px 15px;
     font-size: 13px;
     border: none;
     outline: none;
     color: white;
     background-color: #5F9BFF;
-    ;
     border-radius: 15px;
-    /* margin-top: 20px; */
+    margin-bottom: 10px;
 }
 
 .line-2{
-    width: 100%;
+    width: auto;
     border-top: 2px solid grey;
-    margin: 20px 0px;
+    margin: 30px 50px 30px 10px;
 }
+
+.page-2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.page-container{
+    margin: 30px 50px 30px 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.left-content{
+   padding: 50px;
+}
+
+.icon-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 50px;
+}
+
+.icon img{
+    width: 65px;
+    height: 65px;
+}
+
+#para{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.page-container .para-line{
+    border-top: 1.5px solid #FF2C2C;
+    margin: 30px 550px 30px 550px;
+}
+
+.right-content{
+    padding: 50px;
+    justify-content: center;
+ }
+
+ .footer-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px 50px 30px 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 0px;
+
+ }
+
+ .footer-1 img{
+    height: 80px;
+    width: 80px;
+ }
+
+ .footer-1 p{
+    font-weight: bold;
+ }
+
+ .footer-1 .joid-btn{
+    padding: 6px 20px;
+    border: 0;
+    outline: none;
+    background-color: #ABEEFD;
+    border-radius: 50px;
+    font-size: small;
+ }
+
+ .page-3{
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+ }
+
+ .footer{
+    display: flex;
+    width: 100%;
+    gap: 600px;
+ }
+
+ .left-foot{
+    width: 50%;
+ }
+
+ .links a{
+    font-weight: bolder;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+ }
+
+ .followUs{
+    margin-top: 30px;
+ }
+
+ .logos img{
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    background-color: cyan;
+    border: 1px solid gray;
+    border-radius: 50px;
+    display: inline-flex;
+ }
+
+ .connectWithUs .mail a{
+    margin-left: 10px;
+    font-weight: bold;
+ }
+
+ .connectWithUs .phone{
+    margin-top: 20px;
+    font-weight: bold;
+ }
+
+ .connectWithUs .phone a{
+    margin-left: 8px;
+ }
+
+ .connectWithUs img{
+    height: 20px;
+    width: 20px;
+ }
+
+ .connectWithUs a{
+    gap: 20px;
+    text-decoration: none;
+    color: black;
+ }
+
+
+ .right-foot{
+    width: 50%;
+ }
+
+
+ /* .carousel {
+    transform: rotate(-90deg) translateY(-100%);
+    width: 100vh; 
+    height: 100vw;
+  }
+  
+  .carousel .slick-slide {
+    transform: rotate(90deg) translateY(100%) !important;
+  } */
+
+  .pagination {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

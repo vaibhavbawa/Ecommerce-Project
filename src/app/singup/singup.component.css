@@ -71,6 +71,7 @@ input[type="password"]::-ms-clear {
 
 .password-container {
     position: relative;
+    /* background-color: wheat; */
 }
 
 /* For other browsers */
@@ -116,6 +117,11 @@ input[type="password"]::-webkit-password-slash {
     background-color: #005AFF;
     color: white;
     cursor: pointer;
+
+    &[disabled]{
+        background-color:dodgerblue;
+        color: #fff;
+    }
 }
 
 .right{
@@ -171,3 +177,15 @@ input[type="password"]::-webkit-password-slash {
 .small{
     color: red;
 }
+
+/* @media only screen and (min-width: 768px) {
+    .container {
+      padding: 0 20px;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .container {
+      padding: 0 50px;
+    }
+  } */
